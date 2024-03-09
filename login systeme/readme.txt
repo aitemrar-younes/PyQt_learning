@@ -1,0 +1,1 @@
+This PyQt application demonstrates a simple login system with multiple pages and database access. Users for authentication are managed directly within the database, and the login credentials are used to grant access to the system.

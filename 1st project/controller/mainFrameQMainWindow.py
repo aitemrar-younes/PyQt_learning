@@ -1,0 +1,53 @@
+import os, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from PyQt5 import QtWidgets
+
+from ui.mainFrame_ui import Ui_MainWindow
+from controller.listFournisseurWidget import ListFournisseurWidget
+from controller.ajouterFournisseurWidget import AjouterFournisseurWidget
+from controller.aboutWidget import AboutWidget
+
+from model.db import DB
+from model.fournisseur import Fournisseur
+
+class MainFrameQMainWindow(QtWidgets.QMainWindow):
+    def __init__(self, fournisseur):
+        super().__init__()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+        self.fournisseur = fournisseur
+
+        # Linking the widget's pages
+        self.listFournisseurWidget = ListFournisseurWidget(fournisseur)
+        self.ui.stackedWidget.addWidget(self.listFournisseurWidget)
+        self.ajouterFournisseurWidget = AjouterFournisseurWidget(fournisseur)
+        self.ui.stackedWidget.addWidget(self.ajouterFournisseurWidget)
+        self.aboutWidget = AboutWidget()
+        self.ui.stackedWidget.addWidget(self.aboutWidget)
+        self.ui.stackedWidget.setCurrentIndex(0)
+
+        # binding buttons click
+        self.ui.actionList.triggered.connect(lambda:self.switch_to(0))
+        self.ui.actionAjouter.triggered.connect(lambda:self.switch_to(1))
+        self.ui.actionAbout.triggered.connect(lambda:self.switch_to(2))
+
+        #
+        self.listFournisseurWidget.ui.ajouterFournisseur_pushButton.clicked.connect(lambda:self.switch_to(1))
+        self.ajouterFournisseurWidget.ui.annulerAjouter_pushButton.clicked.connect(lambda:self.switch_to(0))
+
+    def switch_to(self, index):
+        self.ui.stackedWidget.setCurrentIndex(index)
+        if index == 0:
+            self.listFournisseurWidget.refresh()
+        if index == 1:
+            self.ajouterFournisseurWidget.refresh()
+        if index == 2:
+            print('dev widgett')
+
+if __name__ == "__main__":
+    app = QtWidgets.QApplication([])
+    db = DB()
+    fournisseur = Fournisseur(db)
+    main_window = MainFrameQMainWindow(fournisseur)
+    main_window.show()
+    sys.exit(app.exec_())
