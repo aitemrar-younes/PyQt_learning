@@ -9,6 +9,7 @@ class ListFournisseurWidget(QtWidgets.QWidget):
         self.ui.setupUi(self)
         self.fournisseur:Fournisseur = fournisseur
         self.fillTable()
+        self.ui.pageSize_comboBox.completer().setCompletionMode(QtWidgets.QCompleter.PopupCompletion)
 
         #params
         self.ui.fournisseurList_tableWidget.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)

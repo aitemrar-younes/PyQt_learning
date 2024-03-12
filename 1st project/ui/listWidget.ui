@@ -64,10 +64,16 @@
         </size>
        </property>
        <property name="editable">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="currentText">
         <string>10</string>
+       </property>
+       <property name="insertPolicy">
+        <enum>QComboBox::NoInsert</enum>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QComboBox::AdjustToContents</enum>
        </property>
        <item>
         <property name="text">
