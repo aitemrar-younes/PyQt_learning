@@ -13,11 +13,12 @@ from model.db import DB
 from model.fournisseur import Fournisseur
 
 class MainFrameQMainWindow(QtWidgets.QMainWindow):
-    def __init__(self, fournisseur):
+    def __init__(self, fournisseur, item):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.fournisseur = fournisseur
+        self.item = item
 
         # Linking the widget's pages
         self.listFournisseurWidget = ListFournisseurWidget(fournisseur)
@@ -26,7 +27,7 @@ class MainFrameQMainWindow(QtWidgets.QMainWindow):
         self.ui.stackedWidget.addWidget(self.ajouterFournisseurWidget)
         self.aboutWidget = AboutWidget()
         self.ui.stackedWidget.addWidget(self.aboutWidget)
-        self.ajouterItemWidget = AjouterItemWidget()
+        self.ajouterItemWidget = AjouterItemWidget(item, self)
         self.ui.stackedWidget.addWidget(self.ajouterItemWidget)
         self.ajouterTransactionWidget = AjouterTransactionWidget()
         self.ui.stackedWidget.addWidget(self.ajouterTransactionWidget)
@@ -49,8 +50,8 @@ class MainFrameQMainWindow(QtWidgets.QMainWindow):
             self.listFournisseurWidget.refresh()
         if index == 1:
             self.ajouterFournisseurWidget.refresh()
-        if index == 2:
-            print('dev widgett')
+        if index == 3:
+            self.ajouterItemWidget.refresh()
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
