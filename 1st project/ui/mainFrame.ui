@@ -47,8 +47,8 @@
     <property name="title">
      <string>Stock</string>
     </property>
-    <addaction name="actionList_3"/>
-    <addaction name="actionTransactions"/>
+    <addaction name="itemList_action"/>
+    <addaction name="ajouterTransactions_action"/>
    </widget>
    <addaction name="menuEmployee"/>
    <addaction name="menuStock"/>
@@ -84,12 +84,12 @@
     <string>About DEV</string>
    </property>
   </action>
-  <action name="actionList_3">
+  <action name="itemList_action">
    <property name="text">
     <string>List</string>
    </property>
   </action>
-  <action name="actionTransactions">
+  <action name="ajouterTransactions_action">
    <property name="text">
     <string>Transactions</string>
    </property>
