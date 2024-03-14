@@ -9,7 +9,7 @@ class Item():
     # list item
     def list_item_all(self):
         sql_query = 'select * from item'
-        with self.db.connection.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
+        with self.db.connection.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cursor:
             cursor.execute(sql_query)
             return cursor.fetchall()
 
@@ -26,7 +26,7 @@ class Item():
     def ajouter_item(self, data):
         sql_insert = 'insert into item (nom, designation) values (%s,%s)'
         try:
-            with self.db.connection.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
+            with self.db.connection.cursor() as cursor:
                 cursor.execute(sql_insert, data)
                 self.db.connection.commit()
                 return {'is_ok':True, 'message':'' }

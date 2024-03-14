@@ -1,10 +1,11 @@
 from ui.Item_ui.AddItemWidget_ui import Ui_addItem_Form
 from PyQt5 import QtWidgets
 from model.item import Item
-""" from controller.mainFrameQMainWindow import MainFrameQMainWindow """
+
 
 class AjouterItemWidget(QtWidgets.QWidget):
-    def __init__(self, item, parent):
+    def __init__(self, parent, item):
+        from controller.mainFrameQMainWindow import MainFrameQMainWindow
         super().__init__()
         self.ui = Ui_addItem_Form()
         self.ui.setupUi(self)

@@ -79,7 +79,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="comboBox">
+           <widget class="QComboBox" name="item_comboBox">
             <property name="minimumSize">
              <size>
               <width>320</width>
@@ -92,36 +92,6 @@
             <property name="insertPolicy">
              <enum>QComboBox::NoInsert</enum>
             </property>
-            <item>
-             <property name="text">
-              <string>item 1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>item 2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>item 3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>item 4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>item 5</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>item 6</string>
-             </property>
-            </item>
            </widget>
           </item>
          </layout>
@@ -322,7 +292,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="modifierItem_pushButton">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -335,7 +305,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="ajouterItem_pushButton">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -385,7 +355,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QDoubleSpinBox" name="prixAchat_doubleSpinBox_3">
+           <widget class="QDoubleSpinBox" name="prixAchat_trans_doubleSpinBox">
             <property name="minimumSize">
              <size>
               <width>320</width>
@@ -495,7 +465,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QDoubleSpinBox" name="prixVente_doubleSpinBox_4">
+           <widget class="QDoubleSpinBox" name="prixVente_trans_doubleSpinBox_2">
             <property name="minimumSize">
              <size>
               <width>320</width>
@@ -543,7 +513,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QSpinBox" name="quantite__spinBox_3">
+           <widget class="QSpinBox" name="quantite_trans_spinBox">
             <property name="minimumSize">
              <size>
               <width>320</width>
@@ -579,7 +549,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QDoubleSpinBox" name="prixVente_doubleSpinBox_3">
+           <widget class="QDoubleSpinBox" name="prixVente_trans_doubleSpinBox">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -688,7 +658,7 @@
   <connection>
    <sender>achat_radioButton</sender>
    <signal>toggled(bool)</signal>
-   <receiver>prixAchat_doubleSpinBox_3</receiver>
+   <receiver>prixAchat_trans_doubleSpinBox</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -704,7 +674,7 @@
   <connection>
    <sender>vente_radioButton</sender>
    <signal>toggled(bool)</signal>
-   <receiver>prixVente_doubleSpinBox_3</receiver>
+   <receiver>prixVente_trans_doubleSpinBox</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">

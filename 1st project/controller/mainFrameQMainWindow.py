@@ -27,9 +27,9 @@ class MainFrameQMainWindow(QtWidgets.QMainWindow):
         self.ui.stackedWidget.addWidget(self.ajouterFournisseurWidget)
         self.aboutWidget = AboutWidget()
         self.ui.stackedWidget.addWidget(self.aboutWidget)
-        self.ajouterItemWidget = AjouterItemWidget(item, self)
+        self.ajouterItemWidget = AjouterItemWidget(parent=self, item=item)
         self.ui.stackedWidget.addWidget(self.ajouterItemWidget)
-        self.ajouterTransactionWidget = AjouterTransactionWidget()
+        self.ajouterTransactionWidget = AjouterTransactionWidget(item)
         self.ui.stackedWidget.addWidget(self.ajouterTransactionWidget)
         self.ui.stackedWidget.setCurrentIndex(0)
 
@@ -52,6 +52,8 @@ class MainFrameQMainWindow(QtWidgets.QMainWindow):
             self.ajouterFournisseurWidget.refresh()
         if index == 3:
             self.ajouterItemWidget.refresh()
+        if index == 4:
+            self.ajouterTransactionWidget.refresh()
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
