@@ -1,0 +1,1 @@
+In this mini project i will make an app that let you add 'Fournisseur', 'Poles' and 'items'
