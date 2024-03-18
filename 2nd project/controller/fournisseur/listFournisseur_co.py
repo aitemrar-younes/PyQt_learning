@@ -1,6 +1,7 @@
 from PyQt5 import QtWidgets
 from ui.fournisseur_ui.ListFournisseur_ui import Ui_FournisseurList
 from controller.fournisseur.suppressionFournisseur_co import SuppressionFournisseur_Co
+from controller.fournisseur.modifierDialog_co import ModifierDialog_Co
 
 class ListFournisseur_Co(QtWidgets.QWidget):
     def __init__(self, parent):
@@ -23,6 +24,8 @@ class ListFournisseur_Co(QtWidgets.QWidget):
         self.ui.ajouter_pushButton.clicked.connect(lambda : self.parent.swithToPage(1))
         self.ui.modifier_pushButton.clicked.connect(self.handleModifier)
         self.ui.supprimer_pushButton.clicked.connect(self.handleSuppressionConfirmation)
+        #self.ui.fournisseur_tableWidget.doubleClicked.connect(self.handleDoubleClick)
+        self.ui.fournisseur_tableWidget.cellDoubleClicked.connect(self.handleDoubleClick2)
 
     def loadTable(self):
         data = self.parent.fournisseur.list()
@@ -47,6 +50,17 @@ class ListFournisseur_Co(QtWidgets.QWidget):
         if self.ui.fournisseur_tableWidget.selectionModel().hasSelection():
             #self.currentRow = self.ui.fournisseur_tableWidget.currentRow()
             self.parent.swithToPage(2)
+
+    def handleDoubleClick(self, row):
+        print(row.row())
+        
+    def handleDoubleClick2(self, row, col):
+        item = self.ui.fournisseur_tableWidget.item(row, 0)
+        if item is not None:
+            id_ = int(item.text())
+            print(f"Double-clicked row ID: {id_}")
+            modifierDialog = ModifierDialog_Co(id_, parent=self)
+            modifierDialog.exec_()
 
     def styling(self):
         self.ui.fournisseur_tableWidget.setStyleSheet(
