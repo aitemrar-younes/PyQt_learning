@@ -21,10 +21,14 @@ class ModifierDialog_Co(QtWidgets.QDialog):
 
     def loadFields(self):
         self.data = self.parent.parent.fournisseur.getById(id=self.fournisseur_id)
-        
-        self.ui.lineEdit.setText(self.data['nom'])
-        self.ui.prenom_lineEdit.setText(self.data['prenom'])
-        self.ui.num_lineEdit.setText(self.data['num'])
+        if self.data == None or 'nom' not in self.data:
+            self.ui.modifier_pushButton.setDisabled(True)
+            self.ui.status_label.setText("Le fournisseur n'est pas disponible")
+        else:
+            self.ui.lineEdit.setText(self.data['nom'])
+            self.ui.prenom_lineEdit.setText(self.data['prenom'])
+            self.ui.num_lineEdit.setText(self.data['num'])
+            self.ui.status_label.setText("")
 
     def clearFields(self):
         self.ui.lineEdit.setText('')

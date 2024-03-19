@@ -1,0 +1,7 @@
+<RCC>
+  <qresource>
+    <file>delete_icon.png</file>
+    <file>edit_icon.png</file>
+    <file>save_icon.png</file>
+  </qresource>
+</RCC>

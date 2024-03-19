@@ -13,6 +13,22 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);
+
+/*QLineEdit{
+border-radius:3px;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #d1d1d1;
+}*/
+QLineEdit{ background-color:rgb(202, 255, 227);
+border: 2px solid gray;
+border-radius: 10px;
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 16px;}
+QLineEdit:focus { background-color:rgb(192, 192, 255);}</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -79,6 +95,14 @@
           <font>
            <pointsize>10</pointsize>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit{
+border-radius:3px;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #d1d1d1;
+	padding:5px 12px
+}</string>
          </property>
         </widget>
        </item>
@@ -166,6 +190,9 @@
            <pointsize>10</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
         </widget>
        </item>
       </layout>
@@ -214,6 +241,13 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
        <item>
+        <widget class="QLabel" name="status_label">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
         <spacer name="horizontalSpacer">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -234,8 +268,21 @@
            <height>27</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: transparent;
+border:1px solid red;
+border-radius:3px;
+color:red;
+font-weight:500;
+letter-spacing:1px;
+padding:8px 12px;</string>
+         </property>
          <property name="text">
           <string>Annuler</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resources/resources.qrc">
+           <normaloff>:/delete_icon.png</normaloff>:/delete_icon.png</iconset>
          </property>
         </widget>
        </item>
@@ -247,8 +294,20 @@
            <height>27</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #33b249;
+border-radius:3px;
+color:#fff;
+font-weight:500;
+letter-spacing:1px;
+padding:8px 12px;</string>
+         </property>
          <property name="text">
           <string>Modifier</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resources/resources.qrc">
+           <normaloff>:/edit_icon.png</normaloff>:/edit_icon.png</iconset>
          </property>
         </widget>
        </item>
@@ -264,13 +323,15 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>72</height>
+       <height>66</height>
       </size>
      </property>
     </spacer>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
