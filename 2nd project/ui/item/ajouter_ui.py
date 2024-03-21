@@ -11,13 +11,13 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(626, 346)
-        self.gridLayout = QtWidgets.QGridLayout(Form)
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(353, 180)
+        self.gridLayout = QtWidgets.QGridLayout(Dialog)
         self.gridLayout.setObjectName("gridLayout")
-        self.frame = QtWidgets.QFrame(Form)
+        self.frame = QtWidgets.QFrame(Dialog)
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -89,19 +89,19 @@ class Ui_Form(object):
         self.horizontalLayout_5.addWidget(self.ajouter_pushButton)
         self.verticalLayout.addLayout(self.horizontalLayout_5)
         self.gridLayout_2.addLayout(self.verticalLayout, 0, 0, 1, 1)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 163, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 2, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.gridLayout_2.addItem(spacerItem1, 1, 0, 1, 1)
         self.gridLayout.addWidget(self.frame, 0, 0, 1, 1)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_5.setText(_translate("Form", "Ajouter un item"))
-        self.label.setText(_translate("Form", "Nom"))
-        self.label_2.setText(_translate("Form", "Désignation"))
-        self.annuler_pushButton.setText(_translate("Form", "Annuler"))
-        self.ajouterPlus_pushButton.setText(_translate("Form", "Ajouter et continuer"))
-        self.ajouter_pushButton.setText(_translate("Form", "Ajouter"))
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.label_5.setText(_translate("Dialog", "Ajouter un item"))
+        self.label.setText(_translate("Dialog", "Nom"))
+        self.label_2.setText(_translate("Dialog", "Désignation"))
+        self.annuler_pushButton.setText(_translate("Dialog", "Annuler"))
+        self.ajouterPlus_pushButton.setText(_translate("Dialog", "Ajouter et continuer"))
+        self.ajouter_pushButton.setText(_translate("Dialog", "Ajouter"))

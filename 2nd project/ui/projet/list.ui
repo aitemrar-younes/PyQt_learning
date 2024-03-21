@@ -53,7 +53,7 @@
              </font>
             </property>
             <property name="text">
-             <string>List des poles</string>
+             <string>List des Projets</string>
             </property>
             <property name="margin">
              <number>0</number>
@@ -77,10 +77,48 @@
            </spacer>
           </item>
           <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="minimumSize">
+               <size>
+                <width>35</width>
+                <height>27</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>85</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Pole</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="pole_comboBox">
+              <property name="minimumSize">
+               <size>
+                <width>80</width>
+                <height>27</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
            <widget class="QLabel" name="label">
             <property name="minimumSize">
              <size>
-              <width>85</width>
+              <width>55</width>
               <height>27</height>
              </size>
             </property>
@@ -245,7 +283,7 @@
          </layout>
         </item>
         <item>
-         <widget class="QTableWidget" name="pole_tableWidget">
+         <widget class="QTableWidget" name="projet_tableWidget">
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -289,22 +327,22 @@
           </column>
           <column>
            <property name="text">
-            <string>Nom</string>
+            <string>Intitulé</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Libellé</string>
+            <string>Pole</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Date création</string>
+            <string>Date ouverture</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Division</string>
+            <string>Budget</string>
            </property>
           </column>
          </widget>
