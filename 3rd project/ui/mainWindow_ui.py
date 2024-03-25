@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
 "    background-color:transparent;\n"
 "    border-bottom:1px solid #d1d1d1;\n"
 "\n"
-"    color: #666;\n"
+"    color: #fff;\n"
 "    letter-spacing:1.0px;\n"
 "}\n"
 "\n"
@@ -40,12 +40,21 @@ class Ui_MainWindow(object):
 "    outline:none;\n"
 "    border:none;\n"
 "    border-radius:5px;\n"
-"    /*color: #d9d9d9;*/\n"
+"    color: #333;\n"
+"}\n"
+"\n"
+"QPushButton::checked{\n"
+"    background-color: rgba(255,255,255,1);\n"
+"    outline:none;\n"
+"    border:none;\n"
+"    border-radius:5px;\n"
+"    color: #333;\n"
 "};\n"
 "\n"
 "/*background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 63, 140, 174), stop:1 rgba(0, 27, 74, 183));*/\n"
 "\n"
-"    background-color: rgb(244, 246, 249);\n"
+"    /*background-color: rgb(244, 246, 249);*/\n"
+"    background-color: rgba(0, 0, 0, 0.7);\n"
 "    border-right:2px solid #d9d9d9;\n"
 "")
         self.widget.setObjectName("widget")
@@ -58,9 +67,12 @@ class Ui_MainWindow(object):
         spacerItem1 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.gridLayout_2.addItem(spacerItem1, 2, 1, 1, 1)
         self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setContentsMargins(-1, -1, -1, 0)
+        self.verticalLayout.setSpacing(3)
         self.verticalLayout.setObjectName("verticalLayout")
         self.dashBoard_pushButton = QtWidgets.QPushButton(self.widget)
-        self.dashBoard_pushButton.setMinimumSize(QtCore.QSize(0, 40))
+        self.dashBoard_pushButton.setMinimumSize(QtCore.QSize(0, 35))
+        self.dashBoard_pushButton.setMaximumSize(QtCore.QSize(16777215, 35))
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
@@ -68,10 +80,13 @@ class Ui_MainWindow(object):
         self.dashBoard_pushButton.setFont(font)
         self.dashBoard_pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.dashBoard_pushButton.setStyleSheet("")
+        self.dashBoard_pushButton.setCheckable(True)
+        self.dashBoard_pushButton.setAutoExclusive(True)
         self.dashBoard_pushButton.setObjectName("dashBoard_pushButton")
         self.verticalLayout.addWidget(self.dashBoard_pushButton)
         self.fournisseur_pushButton = QtWidgets.QPushButton(self.widget)
-        self.fournisseur_pushButton.setMinimumSize(QtCore.QSize(0, 40))
+        self.fournisseur_pushButton.setMinimumSize(QtCore.QSize(0, 35))
+        self.fournisseur_pushButton.setMaximumSize(QtCore.QSize(16777215, 35))
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
@@ -79,10 +94,13 @@ class Ui_MainWindow(object):
         self.fournisseur_pushButton.setFont(font)
         self.fournisseur_pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.fournisseur_pushButton.setStyleSheet("")
+        self.fournisseur_pushButton.setCheckable(True)
+        self.fournisseur_pushButton.setAutoExclusive(True)
         self.fournisseur_pushButton.setObjectName("fournisseur_pushButton")
         self.verticalLayout.addWidget(self.fournisseur_pushButton)
         self.item_pushButton = QtWidgets.QPushButton(self.widget)
-        self.item_pushButton.setMinimumSize(QtCore.QSize(0, 40))
+        self.item_pushButton.setMinimumSize(QtCore.QSize(0, 35))
+        self.item_pushButton.setMaximumSize(QtCore.QSize(16777215, 35))
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
@@ -90,10 +108,13 @@ class Ui_MainWindow(object):
         self.item_pushButton.setFont(font)
         self.item_pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.item_pushButton.setStyleSheet("")
+        self.item_pushButton.setCheckable(True)
+        self.item_pushButton.setAutoExclusive(True)
         self.item_pushButton.setObjectName("item_pushButton")
         self.verticalLayout.addWidget(self.item_pushButton)
         self.pole_pushButton = QtWidgets.QPushButton(self.widget)
-        self.pole_pushButton.setMinimumSize(QtCore.QSize(0, 40))
+        self.pole_pushButton.setMinimumSize(QtCore.QSize(0, 35))
+        self.pole_pushButton.setMaximumSize(QtCore.QSize(16777215, 35))
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
@@ -101,10 +122,13 @@ class Ui_MainWindow(object):
         self.pole_pushButton.setFont(font)
         self.pole_pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pole_pushButton.setStyleSheet("")
+        self.pole_pushButton.setCheckable(True)
+        self.pole_pushButton.setAutoExclusive(True)
         self.pole_pushButton.setObjectName("pole_pushButton")
         self.verticalLayout.addWidget(self.pole_pushButton)
         self.nt_pushButton = QtWidgets.QPushButton(self.widget)
-        self.nt_pushButton.setMinimumSize(QtCore.QSize(0, 40))
+        self.nt_pushButton.setMinimumSize(QtCore.QSize(0, 35))
+        self.nt_pushButton.setMaximumSize(QtCore.QSize(16777215, 35))
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
@@ -112,6 +136,8 @@ class Ui_MainWindow(object):
         self.nt_pushButton.setFont(font)
         self.nt_pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.nt_pushButton.setStyleSheet("")
+        self.nt_pushButton.setCheckable(True)
+        self.nt_pushButton.setAutoExclusive(True)
         self.nt_pushButton.setObjectName("nt_pushButton")
         self.verticalLayout.addWidget(self.nt_pushButton)
         self.gridLayout_2.addLayout(self.verticalLayout, 5, 1, 1, 1)
@@ -126,7 +152,7 @@ class Ui_MainWindow(object):
         font.setPointSize(16)
         self.label.setFont(font)
         self.label.setStyleSheet("background-color: transparent;\n"
-"color: #303844;\n"
+"color: #fff;\n"
 "border: none;")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
@@ -134,7 +160,8 @@ class Ui_MainWindow(object):
         spacerItem5 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.gridLayout_2.addItem(spacerItem5, 4, 1, 1, 1)
         self.deconnexion_pushButton = QtWidgets.QPushButton(self.widget)
-        self.deconnexion_pushButton.setMinimumSize(QtCore.QSize(0, 40))
+        self.deconnexion_pushButton.setMinimumSize(QtCore.QSize(0, 35))
+        self.deconnexion_pushButton.setMaximumSize(QtCore.QSize(16777215, 35))
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
@@ -148,6 +175,36 @@ class Ui_MainWindow(object):
         spacerItem6 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_2.addItem(spacerItem6, 6, 2, 1, 1)
         self.line = QtWidgets.QFrame(self.widget)
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
+        self.line.setPalette(palette)
+        self.line.setStyleSheet("background-color: #fff;")
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")

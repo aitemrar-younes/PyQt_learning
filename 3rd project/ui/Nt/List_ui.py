@@ -34,8 +34,6 @@ class Ui_Form(object):
 "    /*color: #fff;*/\n"
 "}\n"
 ";\n"
-"\n"
-"background-color: rgb(244, 246, 249);\n"
 "")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -87,7 +85,9 @@ class Ui_Form(object):
         self.tableWidget.horizontalHeader().setStretchLastSection(True)
         self.tableWidget.verticalHeader().setMinimumSectionSize(40)
         self.gridLayout.addWidget(self.tableWidget, 0, 0, 1, 1)
-        self.gridLayout_2.addWidget(self.frame_2, 1, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.frame_2, 2, 0, 1, 1)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.gridLayout_2.addItem(spacerItem1, 1, 0, 1, 1)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)

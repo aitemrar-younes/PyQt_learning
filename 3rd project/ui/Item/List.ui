@@ -29,6 +29,52 @@
    <property name="bottomMargin">
     <number>0</number>
    </property>
+   <item row="2" column="0">
+    <widget class="QFrame" name="frame_2">
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QTableWidget" name="tableWidget">
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="verticalHeaderMinimumSectionSize">
+         <number>40</number>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Code</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Désignation</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
    <item row="0" column="0">
     <widget class="QFrame" name="frame">
      <property name="styleSheet">
@@ -46,8 +92,6 @@ QPushButton::hover{
 	/*color: #fff;*/
 }
 ;
-
-background-color: rgb(244, 246, 249);
 </string>
      </property>
      <property name="frameShape">
@@ -109,50 +153,20 @@ background-color: rgb(244, 246, 249);
     </widget>
    </item>
    <item row="1" column="0">
-    <widget class="QFrame" name="frame_2">
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
      </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
      </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <item row="0" column="0">
-       <widget class="QTableWidget" name="tableWidget">
-        <property name="editTriggers">
-         <set>QAbstractItemView::NoEditTriggers</set>
-        </property>
-        <attribute name="horizontalHeaderStretchLastSection">
-         <bool>true</bool>
-        </attribute>
-        <attribute name="verticalHeaderMinimumSectionSize">
-         <number>40</number>
-        </attribute>
-        <column>
-         <property name="text">
-          <string>ID</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Code</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Désignation</string>
-         </property>
-        </column>
-       </widget>
-      </item>
-     </layout>
-    </widget>
+    </spacer>
    </item>
   </layout>
  </widget>
