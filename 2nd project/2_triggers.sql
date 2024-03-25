@@ -3,7 +3,7 @@ CREATE OR REPLACE FUNCTION update_historique_item_price()
 RETURNS TRIGGER AS $$
 BEGIN
     INSERT INTO historique_item_price (item_id, price, date_debut, date_fin)
-    VALUES (NEW.id, NEW.cout, OLD.last_date_price_modified, CURRENT_DATE);
+    VALUES (NEW.id, OLD.cout, OLD.last_date_price_modified, CURRENT_DATE);
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;

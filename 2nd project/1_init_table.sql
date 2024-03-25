@@ -11,9 +11,9 @@ CREATE TABLE fournisseur (
 CREATE TABLE item (
     id SERIAL PRIMARY KEY,
     nom VARCHAR UNIQUE,
-    qnt INTEGER DEFAULT 0,
+    qnt INTEGER DEFAULT 0 check ( qnt >=0 ),
     date DATE DEFAULT CURRENT_DATE,
-    cout NUMERIC DEFAULT 0,
+    cout NUMERIC DEFAULT 0 check ( cout >=0 ),
     last_date_price_modified DATE DEFAULT CURRENT_DATE
 );
 
@@ -30,15 +30,16 @@ CREATE TABLE pole (
     nom VARCHAR UNIQUE,
     libelle VARCHAR,
     date_creation DATE DEFAULT CURRENT_DATE,
-    division_id INTEGER REFERENCES division(id)
+    division_id INTEGER REFERENCES division(id) not null
 );
 
 -- Table: achat
 CREATE TABLE achat (
     id SERIAL PRIMARY KEY,
-    item_id INTEGER REFERENCES item(id),
+    item_id INTEGER REFERENCES item(id) not null,
+	fournisseur_id INTEGER REFERENCES fournisseur(id),
     qnt INTEGER check( qnt>0 ),
-    price NUMERIC,
+    price NUMERIC check( price>0 ),
     date DATE DEFAULT CURRENT_DATE
 );
 
@@ -46,8 +47,10 @@ CREATE TABLE achat (
 CREATE TABLE projet (
     id SERIAL PRIMARY KEY,
     pole_id INTEGER REFERENCES pole(id),
-    date_ouverture DATE,
-    budget INTEGER
+	intitule VARCHAR,
+    date_ouverture DATE not NULL,
+	date_fin DATE,
+    budget INTEGER check( budget>0 )
 );
 
 -- Table: project_items
@@ -56,20 +59,15 @@ CREATE TABLE project_items (
     project_id INTEGER REFERENCES projet(id),
     item_id INTEGER REFERENCES item(id),
     date DATE,
-    price INTEGER
+    price INTEGER check (price>0),
+	qnt INTEGER check (qnt>0)
 );
 
 -- Table: historique_item_price
 CREATE TABLE historique_item_price (
     id SERIAL PRIMARY KEY,
-    item_id INTEGER REFERENCES item(id),
-    price NUMERIC,
-    date_debut DATE,
-    date_fin DATE
+    item_id INTEGER REFERENCES item(id) not null,
+    price NUMERIC check( price > 0 ),
+    date_debut DATE not null,
+    date_fin DATE not null
 );
-
-alter table public.projet
-add column intitule VARCHAR;
-
-alter table public.project_items
-add column qnt INTEGER check (qnt>0);
