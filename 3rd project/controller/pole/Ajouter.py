@@ -1,7 +1,7 @@
 from PyQt5 import QtWidgets
-from ui.Fournisseur.Ajouter_ui import Ui_Dialog
+from ui.Pole.Ajouter_ui import Ui_Dialog
 
-class PoleList(QtWidgets.QDialog):
+class PoleAjouter(QtWidgets.QDialog):
     def __init__(self):
         super().__init__()
         self.ui = Ui_Dialog()
