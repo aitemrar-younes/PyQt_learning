@@ -8,6 +8,9 @@ from controller.item.List import ItemList
 from controller.pole.List import PoleList
 from controller.nt.List import NTList
 
+from controller.chauffeur.List import ChauffeurList
+from controller.voiture.List import VoitureList
+
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
@@ -20,11 +23,17 @@ class MainWindow(QtWidgets.QMainWindow):
         poleList = PoleList()
         nTList = NTList()
 
+        chauffeurList = ChauffeurList()
+        voitureList = VoitureList()
+
         self.ui.stackedWidget.addWidget(dashBoardList)
         self.ui.stackedWidget.addWidget(fournisseurList)
         self.ui.stackedWidget.addWidget(itemList)
         self.ui.stackedWidget.addWidget(poleList)
         self.ui.stackedWidget.addWidget(nTList)
+
+        self.ui.stackedWidget.addWidget(chauffeurList)
+        self.ui.stackedWidget.addWidget(voitureList)
 
         self.ui.stackedWidget.setCurrentIndex(0)
         self.buttonsBindings()
@@ -36,6 +45,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.item_pushButton.clicked.connect(lambda: self.switchTo(2))
         self.ui.pole_pushButton.clicked.connect(lambda: self.switchTo(3))
         self.ui.nt_pushButton.clicked.connect(lambda: self.switchTo(4))
+
+        self.ui.chauffeur_pushButton.clicked.connect(lambda: self.switchTo(5))
+        self.ui.voiture_pushButton.clicked.connect(lambda: self.switchTo(6))
 
         self.ui.deconnexion_pushButton.clicked.connect(lambda: sys.exit())
 

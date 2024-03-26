@@ -717,7 +717,7 @@ border: none;</string>
             </spacer>
            </item>
            <item>
-            <widget class="QPushButton" name="nt_pushButton_2">
+            <widget class="QPushButton" name="chauffeur_pushButton">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -755,7 +755,7 @@ border: none;</string>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="nt_pushButton_3">
+            <widget class="QPushButton" name="voiture_pushButton">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -793,7 +793,7 @@ border: none;</string>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="nt_pushButton_4">
+            <widget class="QPushButton" name="reparation_pushButton">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -831,7 +831,7 @@ border: none;</string>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="nt_pushButton_5">
+            <widget class="QPushButton" name="lineTransport_pushButton">
              <property name="minimumSize">
               <size>
                <width>0</width>
