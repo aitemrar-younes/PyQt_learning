@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'List.ui'
+# Form implementation generated from reading ui file '.\3rd project\ui\Voiture\List.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.10
 #
@@ -63,7 +63,9 @@ class Ui_Form(object):
         self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(5)
-        self.tableWidget.setRowCount(0)
+        self.tableWidget.setRowCount(1)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
@@ -74,8 +76,20 @@ class Ui_Form(object):
         self.tableWidget.setHorizontalHeaderItem(3, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(0, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(0, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(0, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(0, 3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setItem(0, 4, item)
         self.tableWidget.horizontalHeader().setStretchLastSection(True)
+        self.tableWidget.verticalHeader().setVisible(False)
         self.tableWidget.verticalHeader().setMinimumSectionSize(40)
+        self.tableWidget.verticalHeader().setSortIndicatorShown(False)
         self.gridLayout.addWidget(self.tableWidget, 0, 0, 1, 1)
         self.gridLayout_2.addWidget(self.frame_2, 2, 0, 1, 1)
 
@@ -87,6 +101,8 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Form"))
         self.label.setText(_translate("Form", "Gestion des Voitures"))
         self.ajouter_pushButton.setText(_translate("Form", "Ajouter"))
+        item = self.tableWidget.verticalHeaderItem(0)
+        item.setText(_translate("Form", "New Row"))
         item = self.tableWidget.horizontalHeaderItem(0)
         item.setText(_translate("Form", "ID"))
         item = self.tableWidget.horizontalHeaderItem(1)
@@ -97,3 +113,16 @@ class Ui_Form(object):
         item.setText(_translate("Form", "Marque"))
         item = self.tableWidget.horizontalHeaderItem(4)
         item.setText(_translate("Form", "Type d\'aquisition"))
+        __sortingEnabled = self.tableWidget.isSortingEnabled()
+        self.tableWidget.setSortingEnabled(False)
+        item = self.tableWidget.item(0, 0)
+        item.setText(_translate("Form", "134"))
+        item = self.tableWidget.item(0, 1)
+        item.setText(_translate("Form", "00054-123-16"))
+        item = self.tableWidget.item(0, 2)
+        item.setText(_translate("Form", "GOLF 8"))
+        item = self.tableWidget.item(0, 3)
+        item.setText(_translate("Form", "VOLKSWAGEN"))
+        item = self.tableWidget.item(0, 4)
+        item.setText(_translate("Form", "Louer"))
+        self.tableWidget.setSortingEnabled(__sortingEnabled)
